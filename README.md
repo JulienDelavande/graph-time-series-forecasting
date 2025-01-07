@@ -3,7 +3,7 @@
 
 # Time Series Forecasting with Graph-Based Models
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/juliendelavande/graph-time-series-forecasting/notebook.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/juliendelavande/graph-time-series-forecasting/flue.ipynb)
 
 This project explores graph-based approaches for time series forecasting, leveraging **graph learning** techniques to uncover meaningful relationships in data. We implemented two models:
 
