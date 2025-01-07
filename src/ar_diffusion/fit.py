@@ -2,15 +2,7 @@ from scipy.optimize import minimize
 import numpy as np
 from .loss import ar_diffusion_loss
 
-def fit_ar_diffusion(
-    X, 
-    p=2, 
-    tau=0.1, 
-    lambda_reg=0.0, 
-    l1=True, 
-    method="L-BFGS-B",
-    max_iter=300
-):
+def fit_ar_diffusion(X, p=2, tau=0.1, lambda_reg=0.0, l1=True, method="L-BFGS-B", max_iter=300):
     """
     Fits the parameters of an AR(p) model with a diffusion term.
 

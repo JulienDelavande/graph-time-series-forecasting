@@ -3,6 +3,7 @@ import numpy as np
 
 def predict_ar_diffusion_one_step(X_full, t, alpha, beta, L, tau, p):
     """
+
     Predicts the next state of the AR(p) diffusion model for a single time step.
 
     This function computes the predicted value `X_pred(t)` using the 
