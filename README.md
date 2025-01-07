@@ -1,34 +1,37 @@
-
-
-
 # Time Series Forecasting with Graph-Based Models
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/juliendelavande/graph-time-series-forecasting/flue.ipynb)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JulienDelavande/graph-time-series-forecasting/blob/main/flue.ipynb)
 
 This project explores graph-based approaches for time series forecasting, leveraging **graph learning** techniques to uncover meaningful relationships in data. We implemented two models:
 
 1. **AR+Diffusion Model**: Combines autoregressive (AR) components with graph diffusion dynamics.
 2. **SVAR Model**: Structural Vector Autoregression with polynomial expansions of the adjacency matrix.
 
-### Data
+## Data
+
 The project uses COVID-19 weekly case counts from multiple countries, sourced from [Our World in Data](https://github.com/owid/covid-19-data). Data preprocessing includes:
+
 - Aggregating daily cases into weekly data.
 - Differencing and clipping negative values.
 - Scaling with MinMaxScaler.
 
-### Key Features
+## Key Features
+
 - **Graph Learning**: Infers graph structure using adjacency matrices and Laplacian operators.
 - **Forecasting Models**: Implements AR+Diffusion and SVAR with grid search for hyperparameter tuning.
 - **Visualization**: Generates insights into learned graphs and forecasting performance.
 
-### Usage
+## Usage
+
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/juliendelavande/graph-time-series-forecasting.git
    cd graph-time-series-forecasting
    ```
 
 2. use the function to fit AR+Diffusion or SVAR modelss stored in the `src` folder:
+
    ```python
     # AR + Diffusion 
     from src.ar_diffision.fit import fit_ar_diffusion
@@ -74,19 +77,22 @@ The project uses COVID-19 weekly case counts from multiple countries, sourced fr
     x_pred = predict_svar_one_step(X_norm[:, t - M:t], A_hat, c_hat)
    ```
 
-### Requirements
+## Requirements
+
 - Python 3.8+
 - Key libraries: `numpy`, `scipy`, `matplotlib`, `pandas`, `jupyter`, `scikit-learn`, `geopandas`
 
+## Results
 
-### Results
 - **AR+Diffusion**: Best for moderate diffusion strength, capturing intra- and inter-country dependencies.
 - **SVAR**: Superior performance, capturing key temporal and structural patterns.
 
-### Contributions
+## Contributions
+
 - [Soël Megdoud](mailto:soel.megdoud@ens-paris-saclay.fr): AR+Diffusion implementation, paper review.
 - [Julien Delavande](mailto:julien.delavande@ens-paris-saclay.fr): SVAR implementation, hyperparameter tuning, analysis.
 
-### References
+## References
+
 - Dong et al. (2019). *Learning Graphs from Data: A Signal Representation Perspective.*
 - Additional references included in the [report](./report.pdf).
